@@ -1,1 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #fcfcfc;
+            color: #08746d;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            float: right;
+            margin-right: 20px;
+        }
+        nav a {
+            color: #1805ea;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .quemsomos {
+            text-align: justify;
+            margin-top: 50px;
+        }
+        .imagem-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .imagem-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .formulario {
+            margin-top: 50px;
+            text-align: center;
+        }
+        .formulario input[type="text"],
+        .formulario input[type="email"],
+        .formulario input[type="date"],
+        .formulario select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        .formulario input[type="submit"] {
+            background-color: #1805ea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>JM Viagens</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="quem_somos.html">Quem Somos</a>
+        <a href="contato.html">Contato</a>
+        <a href="destinos.html">Comprar Pacotes</a>
+    </nav>
+</header>
+
+<div class="formulario">
+    <h2>Reserve seu Pacote de Viagem</h2>
+    <form action="submit_form.php" method="post">
+        <input type="text" name="nome" placeholder="Nome Completo" required><br>
+        <input type="email" name="email" placeholder="E-mail" required><br>
+        <input type="date" name="data_partida" placeholder="Data de Partida" required><br>
+        <input type="date" name="data_retorno" placeholder="Data de Retorno" required><br>
+        <select name="criancas">
+            <option value="nao">Não</option>
+            <option value="sim">Sim</option>
+        </select><br>
+        <input type="number" name="idade_crianca" placeholder="Idade da Criança (se aplicável)"><br>
+        <input type="submit" value="Reservar Pacote">
+    </form>
+</div>
+
+</body>
+</html>
 
