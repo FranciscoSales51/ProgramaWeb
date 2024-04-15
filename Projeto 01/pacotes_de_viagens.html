@@ -62,12 +62,7 @@
         .reserva-sucesso {
             color: green;
             font-weight: bold;
-            animation: blink-animation 1s steps(5, start) infinite;
-        }
-        @keyframes blink-animation {
-            to {
-                visibility: hidden;
-            }
+            display: none;
         }
     </style>
 </head>
@@ -98,17 +93,14 @@
         <input type="number" name="idade_crianca" placeholder="Idade da Criança (se aplicável)"><br>
         <input type="submit" value="Reservar Pacote">
     </form>
-    <div id="reservaSucesso" class="reserva-sucesso" style="display: none;"></div>
+    <div id="reservaSucesso" class="reserva-sucesso"></div>
 </div>
 
 <script>
     function reservarPacote() {
         var nome = document.getElementById('nome').value;
-        document.getElementById('reservaSucesso').innerText = "Reservado com sucesso: " + nome;
+        document.getElementById('reservaSucesso').innerText = "Realizado com sucesso: " + nome;
         document.getElementById('reservaSucesso').style.display = 'block';
-        setTimeout(function () {
-            document.getElementById('reservaSucesso').style.display = 'none';
-        }, 2000); // Tempo em milissegundos para desaparecer
         return false; // Para evitar o envio do formulário
     }
 </script>
