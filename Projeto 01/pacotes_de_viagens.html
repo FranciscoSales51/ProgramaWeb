@@ -45,6 +45,7 @@
         .formulario input[type="text"],
         .formulario input[type="email"],
         .formulario input[type="date"],
+        .formulario input[type="number"],
         .formulario select {
             width: 100%;
             padding: 10px;
@@ -92,6 +93,7 @@
         <input type="email" name="email" placeholder="E-mail" required><br>
         <input type="date" name="data_partida" placeholder="Data de Partida" required><br>
         <input type="date" name="data_retorno" placeholder="Data de Retorno" required><br>
+        <input type="number" name="quantidade_adultos" placeholder="Quantidade de Adultos" required><br>
         <select name="destino" required>
             <option value="">Selecione o destino</option>
             <option value="Aracajú-SE">Aracajú-SE</option>
@@ -110,6 +112,7 @@
         </select><br>
         <label for="quantidade_criancas">Quantidade de Crianças:</label>
         <input type="number" name="quantidade_criancas" id="quantidade_criancas" placeholder="Quantidade de crianças (se aplicável)"><br>
+        <input type="text" name="forma_pagamento" placeholder="Forma de Pagamento"><br>
         <input type="submit" value="Reservar Pacote">
     </form>
     <div id="reservaSucesso" class="reserva-sucesso"></div>
