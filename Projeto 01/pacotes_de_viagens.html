@@ -46,6 +46,7 @@
         .formulario input[type="email"],
         .formulario input[type="date"],
         .formulario input[type="number"],
+        .formulario input[type="tel"],
         .formulario select {
             width: 100%;
             padding: 10px;
@@ -91,9 +92,9 @@
     <form id="formReserva" action="submit_form.php" method="post" onsubmit="return reservarPacote()">
         <input type="text" id="nome" name="nome" placeholder="Nome Completo" required><br>
         <input type="email" name="email" placeholder="E-mail" required><br>
-        <input type="tel" name="telefone" placeholder="Telefone de Contato" required><br>
-        <input type="date" name="data_partida" placeholder="Data de Partida (DD/MM/AAAA)" required><br>
-        <input type="date" name="data_retorno" placeholder="Data de Retorno (DD/MM/AAAA)" required><br>
+        <input type="tel" name="telefone" placeholder="Telefone de Contato (DDD)" required><br>
+        <input type="date" name="data_partida" placeholder="Data de Partida" required><br>
+        <input type="date" name="data_retorno" placeholder="Data de Retorno" required><br>
         <input type="number" name="quantidade_adultos" placeholder="Quantidade de Adultos" required><br>
         <select name="destino" required>
             <option value="">Selecione o destino</option>
