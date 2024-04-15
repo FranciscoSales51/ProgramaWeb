@@ -59,6 +59,16 @@
             cursor: pointer;
             border-radius: 5px;
         }
+        .reserva-sucesso {
+            color: green;
+            font-weight: bold;
+            animation: blink-animation 1s steps(5, start) infinite;
+        }
+        @keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
+        }
     </style>
 </head>
 <body>
@@ -76,8 +86,8 @@
 
 <div class="formulario">
     <h2>Reserve seu Pacote de Viagem</h2>
-    <form action="submit_form.php" method="post">
-        <input type="text" name="nome" placeholder="Nome Completo" required><br>
+    <form action="submit_form.php" method="post" onsubmit="return reservarPacote()">
+        <input type="text" name="nome" id="nome" placeholder="Nome Completo" required><br>
         <input type="email" name="email" placeholder="E-mail" required><br>
         <input type="date" name="data_partida" placeholder="Data de Partida" required><br>
         <input type="date" name="data_retorno" placeholder="Data de Retorno" required><br>
@@ -88,7 +98,20 @@
         <input type="number" name="idade_crianca" placeholder="Idade da Criança (se aplicável)"><br>
         <input type="submit" value="Reservar Pacote">
     </form>
+    <div id="reservaSucesso" class="reserva-sucesso" style="display: none;"></div>
 </div>
+
+<script>
+    function reservarPacote() {
+        var nome = document.getElementById('nome').value;
+        document.getElementById('reservaSucesso').innerText = "Reservado com sucesso: " + nome;
+        document.getElementById('reservaSucesso').style.display = 'block';
+        setTimeout(function () {
+            document.getElementById('reservaSucesso').style.display = 'none';
+        }, 2000); // Tempo em milissegundos para desaparecer
+        return false; // Para evitar o envio do formulário
+    }
+</script>
 
 </body>
 </html>
