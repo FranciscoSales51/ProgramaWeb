@@ -8,7 +8,7 @@
         body {
             font-family: ARIAL BLACK, sans-serif;
             background-image: url('https://c.wallhere.com/photos/cd/60/motherboards_tech-596758.jpg!d');
-            background-size:cover;
+            background-size: cover;
             margin: 0;
             padding: 0;
             height: 100%;
@@ -26,18 +26,32 @@
         .atividade {
             margin-top: 30px;
             text-align: left;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
-        h2,h3,h4,h5,h6,h7,h8,h9,h10,h11,h12,h13,h14,h15,h16,h17,h18,h19,h20,h21,h22,h23,h24,h25,h26,h27,h28 {
+        .atividade > div {
+            flex: 1;
+            margin: 0 10px;
+        }
+        .atividade h2, .atividade h3, .atividade h4, .atividade h5, .atividade h6,
+        .atividade h7, .atividade h8, .atividade h9, .atividade h10, .atividade h11,
+        .atividade h12, .atividade h13, .atividade h14, .atividade h15, .atividade h16,
+        .atividade h17, .atividade h18, .atividade h19, .atividade h20, .atividade h21,
+        .atividade h22, .atividade h23, .atividade h24, .atividade h25 {
             font-size: 20px; 
             margin: 3px 0; 
             color: hsl(356, 98%, 49%);
         }
         label {
-            color:rgb(30, 18, 244);
+            color: rgb(30, 18, 244);
             margin-top: 14px;
             font-size: 20px;
         }
-        
+        a {
+            display: block;
+            margin: 5px 0;
+        }
     </style>
 </head>
 <body>
@@ -48,60 +62,62 @@
     <form action="#">
         <label for="nome">Francisco de Assis Bezerra Sales</label><br>
         
-
         <div class="atividade">
-            <h2>Projeto Site</>
-            <a href="./Projeto 01/index.html">Site</a><br>
-            <h3>Atividade 01</>
-            <a href="index3.html">Link</a><br>
-            <h4>Atividade 02</>
-            <a href="index5.html">Mais Tags</a><br>
-            <h5>Atividade 03</>
-            <a href="tabelas.html">Tabelas</a><br>
-            <h6>Atividade 04</>
-            <a href="formulários.html">Formulários</a><br>
-            <h7>Atividade 05</>
-            <a href="css.html">CSS</a><br>
-            <h8>Atividade 06</>
-            <a href="tag e div.html">Tag Div e Span</a><br>
-            <h9>Atividade 07</>
-            <a href="fontes.html">Famílias de Fontes</a><br>
-            <h10>Atividade 08</>
-            <a href="atividade08.html">Fontes</a><br>
-            <h11>Atividade 09</>   
-            <a href="posicionamento.html">Posicionamento</a><br>
-            <h12>Atividade 10</> 
-            <a href="atividade10.html">Tags, Nav, Header, Footer</a><br>
-            <h13>Atividade 11</> 
-            <a href="atividade11.html">Tag Article, Section Time Aside</a><br>
-            <h14>Atividade 12</> 
-            <a href="atividade12.html">Atributo Data</a><br>
-            <h15>Atividade 13</> 
-            <a href="atividade13.html">Tag Article, Section Time Aside</a><br>
-            <h16>Atividade 14</> 
-            <a href="atividade14.html">Transparências Somra Gradiente</a><br>
-            <h17>Atividade 15</> 
-            <a href="atividade15.html">Transition Animation</a><br>
-            <h18>Atividade 16</> 
-            <a href="atividade16.html">Design Responsivo Bootstrap</a><br>
-            <h19>Atividade 17</> 
-            <a href="atividade17.html">Sistema de Grid</a><br>
-            <h20>Atividade 18</> 
-            <a href="atividade18.html">Formulários Tabelas</a><br>
-            <h21>Atividade 19</> 
-            <a href="atividade19.html">Botões & Imagens responsivas</a><br>
-            <h22>Atividade 20</> 
-            <a href="atividade20.html">Barra de navegação (navbar) e Janela Modal</a><br>
-            <h23>Atividade 21</> 
-            <a href="atividade20.html">Alerts Tooltip Popover</a><br>
-            <h24>Atividade 22</> 
-            <a href="atividade20.html">Alert</a><br>
-            <h25>Atividade 23</> 
-            <a href="atividade20.html">JavaScript</a><br>
+            <div>
+                <h2>Projeto Site</h2>
+                <a href="./Projeto 01/index.html">Site</a><br>
+                <h3>Atividade 01</h3>
+                <a href="index3.html">Link</a><br>
+                <h4>Atividade 02</h4>
+                <a href="index5.html">Mais Tags</a><br>
+                <h5>Atividade 03</h5>
+                <a href="tabelas.html">Tabelas</a><br>
+                <h6>Atividade 04</h6>
+                <a href="formulários.html">Formulários</a><br>
+                <h7>Atividade 05</h7>
+                <a href="css.html">CSS</a><br>
+                <h8>Atividade 06</h8>
+                <a href="tag e div.html">Tag Div e Span</a><br>
+                <h9>Atividade 07</h9>
+                <a href="fontes.html">Famílias de Fontes</a><br>
+                <h10>Atividade 08</h10>
+                <a href="atividade08.html">Fontes</a><br>
+                <h11>Atividade 09</h11>
+                <a href="posicionamento.html">Posicionamento</a><br>
+                <h12>Atividade 10</h12>
+                <a href="atividade10.html">Tags, Nav, Header, Footer</a><br>
+            </div>
+            <div>
+                <h13>Atividade 11</h13>
+                <a href="atividade11.html">Tag Article, Section Time Aside</a><br>
+                <h14>Atividade 12</h14>
+                <a href="atividade12.html">Atributo Data</a><br>
+                <h15>Atividade 13</h15>
+                <a href="atividade13.html">Tag Article, Section Time Aside</a><br>
+                <h16>Atividade 14</h16>
+                <a href="atividade14.html">Transparências Somra Gradiente</a><br>
+                <h17>Atividade 15</h17>
+                <a href="atividade15.html">Transition Animation</a><br>
+                <h18>Atividade 16</h18>
+                <a href="atividade16.html">Design Responsivo Bootstrap</a><br>
+                <h19>Atividade 17</h19>
+                <a href="atividade17.html">Sistema de Grid</a><br>
+                <h20>Atividade 18</h20>
+                <a href="atividade18.html">Formulários Tabelas</a><br>
+                <h21>Atividade 19</h21>
+                <a href="atividade19.html">Botões & Imagens responsivas</a><br>
+                <h22>Atividade 20</h22>
+                <a href="atividade20.html">Barra de navegação (navbar) e Janela Modal</a><br>
+                <h23>Atividade 21</h23>
+                <a href="atividade20.html">Alerts Tooltip Popover</a><br>
+                <h24>Atividade 22</h24>
+                <a href="atividade20.html">Alert</a><br>
+                <h25>Atividade 23</h25>
+                <a href="atividade20.html">JavaScript</a><br>
+            </div>
         </div>
     </form>
 </div>
 
 </body>
 </html>
-
