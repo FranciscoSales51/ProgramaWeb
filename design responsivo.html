@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botões com Bootstrap</title>
+    <!-- Link para o CSS do Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Link para o FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .btn-custom {
+            border-radius: 10px; /* Cantos arredondados */
+            width: 150px; /* Largura dos botões */
+            height: 50px; /* Altura dos botões */
+            margin-right: 10px; /* Espaçamento entre os botões */
+            color: white
+        }
+        .btn-custom i {
+            margin-right: 5px; /* Espaço entre o ícone e o texto */
+        }
+        .btn-custom-blue {
+            background-color: #007bff; /* Cor azul */
+            border-color: #007bff; /* Cor da borda */
+        }
+        .btn-custom-blue:hover {
+            background-color: #0056b3; /* Cor azul mais escura no hover */
+            border-color: #004085; /* Cor da borda no hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <h1 class="mb-4" style="color: rgb(0, 0, 11);">Hello, World!</h1>
+        <div>
+            <button type="button" class="btn btn-custom btn-custom-blue">
+                <i class="fas fa-search"></i> Pesquisar
+            </button>
+            <button type="button" class="btn btn-custom btn-custom-blue">
+                <i class="fas fa-trash-alt"></i> Excluir
+            </button>
+            <button type="button" class="btn btn-custom btn-custom-blue">
+                <i class="fas fa-sync-alt"></i> Atualizar
+            </button>
+        </div>
+    </div>
+
+    <!-- Link para o JavaScript do Bootstrap e FontAwesome -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+</body>
+</html>
 
