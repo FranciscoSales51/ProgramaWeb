@@ -1,1 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .btn-custom {
+            background-color: #007bff; /* Azul */
+            color: white; /* Texto branco */
+        }
+        .btn-custom:hover {
+            background-color: #0056b3; /* Azul escuro ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <h1>Cadastre-se</h1>
+                <form>
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" class="form-control" id="nome">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="senha">Senha:</label>
+                        <input type="password" class="form-control" id="senha">
+                    </div>
 
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Aceito os termos do serviço.
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Escolha sua tecnologia:</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="opcoes" id="php" value="PHP">
+                            <label class="form-check-label" for="php">
+                                PHP
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="opcoes" id="java" value="Java">
+                            <label class="form-check-label" for="java">
+                                Java
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </form>
+            </div>
+
+            <div class="col-sm-4">
+                <h1>Logar</h1>
+                <form>
+                    <div class="form-group">
+                        <label for="login-email">Digite seu e-mail:</label>
+                        <input type="email" class="form-control" id="login-email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="login-senha">Digite sua senha:</label>
+                        <input type="password" class="form-control" id="login-senha">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-custom">Logar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
