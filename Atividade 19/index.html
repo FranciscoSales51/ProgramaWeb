@@ -1,1 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>User Profile</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Cor de fundo clara para contraste */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .outer-padding {
+    position: relative;
+    background-color: #cdebe7; /* Azul claro para o padding adicional */
+    padding: 50px 30px 20px 30px; /* Padding top, right, bottom, left */
+    display: inline-block;
+    border: 1px solid transparent; /* Garante que o padding não afete a largura */
+    border-radius: 0; /* Remover arredondamento */
+  }
+
+  .outer-padding::before {
+    content: "";
+    position: absolute;
+    top: 45px; /* Ajusta a linha para o topo do padding menor */
+    left: 30px;
+    right: 30px;
+    height: 5px; /* Altura da linha */
+    background-color: #004d00; /* Verde mais escuro */
+    z-index: 1; /* Garante que a linha esteja acima do fundo da outer-padding */
+  }
+
+  .header {
+    position: absolute;
+    top: 15px; /* Ajusta a posição para a parte superior do padding maior */
+    left: 30px;
+    font-size: 24px; /* Tamanho maior para o nome */
+    font-weight: bold;
+    margin: 0;
+    color: #007bff; /* Cor azul para destacar o título */
+    z-index: 2; /* Garante que o título esteja acima do padding */
+  }
+
+  .container {
+    background-color: #fff; /* Cor de fundo branca */
+    border-radius: 10px; /* Arredondamento do conteúdo do perfil */
+    padding: 20px;
+    max-width: 320px;
+    position: relative; /* Para sobrepor o padding extra */
+    z-index: 1; /* Garante que o conteúdo esteja acima do padding */
+  }
+
+  .profile-card {
+    text-align: center;
+    padding: 20px; /* Adiciona um pouco de espaçamento interno */
+    background-color: #fff; /* Cor de fundo branca */
+    border-radius: 10px; /* Arredondamento do conteúdo do perfil */
+  }
+
+  .profile-image {
+    width: 120px; /* Tamanho fixo para a imagem circular */
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover; /* Ajusta a imagem para preencher o círculo */
+    margin-bottom: 15px;
+    position: relative; /* Garante que a imagem esteja na frente do contorno */
+  }
+
+  .title {
+    color: #666;
+    margin: 10px 0;
+  }
+
+  .stats {
+    margin: 10px 0;
+    font-size: 14px;
+    position: relative; /* Para adicionar as linhas horizontais */
+  }
+
+  .stats div {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+    position: relative; /* Para garantir que o conteúdo esteja acima das linhas */
+  }
+
+  .stats div + div {
+    border-top: 1px solid #ddd; /* Linha horizontal separadora */
+    padding-top: 5px; /* Espaço acima da linha */
+  }
+
+  /* Adiciona linha horizontal acima de Followers */
+  .stats div:first-of-type::before {
+    content: "";
+    position: absolute;
+    top: -5px; /* Aproxima a linha do elemento "Followers" */
+    left: 0;
+    right: 0;
+    border-top: 1px solid #ddd; /* Linha horizontal separadora */
+  }
+
+  /* Adiciona linha horizontal abaixo de Friends */
+  .stats div:last-of-type::after {
+    content: "";
+    position: absolute;
+    bottom: -5px; /* Aproxima a linha do elemento "Friends" */
+    left: 0;
+    right: 0;
+    border-top: 1px solid #ddd; /* Linha horizontal separadora */
+  }
+
+  .stats div p:first-child {
+    font-weight: bold; /* Deixa o texto em negrito */
+  }
+
+  .button {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px;
+    color: white;
+    background-color: #007bff; /* Cor de fundo azul */
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .button:hover {
+    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+  }
+</style>
+</head>
+<body>
+
+<div class="outer-padding">
+  <div class="header">User Profile</div>
+  <div class="container">
+    <div class="profile-card">
+      <img src="https://i.fbcd.co/products/resized/resized-750-500/53-software-developer-2-b4c924bbb0d276af31519705848706a388aed1848c5c8268126904b55b0f1e28.webp" alt="Perfil" class="profile-image">
+      <h1>Nina Mcintire</h1>
+      <p class="title">Software Engineer</p>
+      <div class="stats">
+        <div>
+          <p>Followers</p>
+          <p id="followers">1,322</p>
+        </div>
+        <div>
+          <p>Following</p>
+          <p id="following">543</p>
+        </div>
+        <div>
+          <p>Friends</p>
+          <p id="friends">13,287</p>
+        </div>
+      </div>
+      <button class="button">Follow</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
 
