@@ -1,1 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Produtos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between mb-3">
+            <button class="btn btn-primary" onclick="viewRecentOrders()" title="Pedidos Recentes"><i class="fa-solid fa-box"></i> Pedidos Recentes</button>
+            <button class="btn btn-secondary" onclick="sendClient()" title="Enviar Cliente"><i class="fa-solid fa-user-plus"></i> Enviar Cliente</button>
+            <button class="btn btn-success" onclick="receivePayment()" title="Receber Pagamento"><i class="fa-solid fa-credit-card"></i> Receber Pagamento</button>
+            <button class="btn btn-info" onclick="viewAllOrders()" title="Todos os Pedidos"><i class="fa-solid fa-list"></i> Todos os Pedidos</button>
+            <button class="btn btn-warning" onclick="newOrder()" title="Novo Pedido"><i class="fa-solid fa-plus"></i> Novo Pedido</button>
+            <button class="btn btn-warning" onclick="showUpdatingMessage()" title="Página Principal"><i class="fa-solid fa-home"></i> Página Principal</button>
+        </div>
+        <h2>Descrição de Produtos</h2>
+        <div class="mb-3">
+            <label for="product-description" class="form-label">Descrição:</label>
+            <input type="text" id="product-description" class="form-control" placeholder="Pesquisar produto">
+        </div>
+        <div class="input-group mb-3">
+            <button class="btn btn-outline-secondary" type="button" onclick="searchProduct()" id="button-addon2"><i class="fa-solid fa-search"></i> Pesquisar</button>
+            <button class="btn btn-outline-secondary" type="button" onclick="reloadPage()" id="button-reload" data-bs-toggle="popover" data-bs-content="Recarregar"><i class="fa-solid fa-sync"></i> Recarregar</button>
+            <button class="btn btn-outline-secondary" type="button" onclick="includeProduct()" id="button-new"><i class="fa-solid fa-plus-circle"></i> Novo</button>
+        </div>
+        <div class="mb-3">
+            <label for="recordsPerPage" class="form-label">Registros por página:</label>
+            <select id="recordsPerPage" class="form-select" style="width: auto;" onchange="updateTable()">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Descrição</th>
+                    <th>Preço</th>
+                    <th>Situação</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="product-table">
+                <!-- Produtos originais e novos produtos aqui -->
+                <tr>
+                    <td>1</td>
+                    <td>Pizza</td>
+                    <td>R$ 30,00</td>
+                    <td><button class="btn btn-sm btn-success" onclick="toggleStatus(this)">Ativo</button></td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="editProduct(this)">Editar</button>
+                        <button class="btn btn-sm btn-success" onclick="includeProduct()">Incluir</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteProduct(this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Refrigerante</td>
+                    <td>R$ 5,00</td>
+                    <td><button class="btn btn-sm btn-success" onclick="toggleStatus(this)">Ativo</button></td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="editProduct(this)">Editar</button>
+                        <button class="btn btn-sm btn-success" onclick="includeProduct()">Incluir</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteProduct(this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Cajuina</td>
+                    <td>R$ 7,00</td>
+                    <td><button class="btn btn-sm btn-success" onclick="toggleStatus(this)">Ativo</button></td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="editProduct(this)">Editar</button>
+                        <button class="btn btn-sm btn-success" onclick="includeProduct()">Incluir</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteProduct(this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Torta</td>
+                    <td>R$ 10,00</td>
+                    <td><button class="btn btn-sm btn-success" onclick="toggleStatus(this)">Ativo</button></td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="editProduct(this)">Editar</button>
+                        <button class="btn btn-sm btn-success" onclick="includeProduct()">Incluir</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteProduct(this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Hambúrguer</td>
+                    <td>R$ 15,00</td>
+                    <td><button class="btn btn-sm btn-success" onclick="toggleStatus(this)">Ativo</button></td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="editProduct(this)">Editar</button>
+                        <button class="btn btn-sm btn-success" onclick="includeProduct()">Incluir</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteProduct(this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Batata Frita</td>
+                    <td>R$ 8,00</td>
+                    <td><button class="btn btn-sm btn-success" onclick="toggleStatus(this)">Ativo</button></td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="editProduct(this)">Editar</button>
+                        <button class="btn btn-sm btn-success" onclick="includeProduct()">Incluir</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteProduct(this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Salada</td>
+                    <td>R$ 12,00</td>
+                    <td><button class="btn btn-sm btn-danger" onclick="toggleStatus(this)">Inativo</button></td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="editProduct(this)">Editar</button>
+                        <button class="btn btn-sm btn-success" onclick="includeProduct()">Incluir</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteProduct(this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Suco Natural</td>
+                    <td>R$ 6,00</td>
+                    <td><button class="btn btn-sm btn-success" onclick="toggleStatus(this)">Ativo</button></td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="editProduct(this)">Editar</button>
+                        <button class="btn btn-sm btn-success" onclick="includeProduct()">Incluir</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteProduct(this)">Excluir</button>
+                    </td>
+                </tr>
+                <!-- Produtos adicionais -->
+                <tr>
+                    <td>9</td>
+                    <td>Macarrão</td>
+                    <td>R$ 20,00</td>
+                    <td><button class="btn btn-sm btn-success" onclick="toggleStatus(this)">Ativo</button></td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="editProduct(this)">Editar</button>
+                        <button class="btn btn-sm btn-success" onclick="includeProduct()">Incluir</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteProduct(this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Frango Assado</td>
+                    <td>R$ 25,00</td>
+                    <td><button class="btn btn-sm btn-danger" onclick="toggleStatus(this)">Inativo</button></td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="editProduct(this)">Editar</button>
+                        <button class="btn btn-sm btn-success" onclick="includeProduct()">Incluir</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteProduct(this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>Cheesecake</td>
+                    <td>R$ 18,00</td>
+                    <td><button class="btn btn-sm btn-success" onclick="toggleStatus(this)">Ativo</button></td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="editProduct(this)">Editar</button>
+                        <button class="btn btn-sm btn-success" onclick="includeProduct()">Incluir</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteProduct(this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Brigadeiro</td>
+                    <td>R$ 4,00</td>
+                    <td><button class="btn btn-sm btn-success" onclick="toggleStatus(this)">Ativo</button></td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="editProduct(this)">Editar</button>
+                        <button class="btn btn-sm btn-success" onclick="includeProduct()">Incluir</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteProduct(this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Brownie</td>
+                    <td>R$ 7,00</td>
+                    <td><button class="btn btn-sm btn-danger" onclick="toggleStatus(this)">Inativo</button></td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="editProduct(this)">Editar</button>
+                        <button class="btn btn-sm btn-success" onclick="includeProduct()">Incluir</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteProduct(this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>Salmon</td>
+                    <td>R$ 50,00</td>
+                    <td><button class="btn btn-sm btn-success" onclick="toggleStatus(this)">Ativo</button></td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="editProduct(this)">Editar</button>
+                        <button class="btn btn-sm btn-success" onclick="includeProduct()">Incluir</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteProduct(this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>Espaguete à Carbonara</td>
+                    <td>R$ 22,00</td>
+                    <td><button class="btn btn-sm btn-success" onclick="toggleStatus(this)">Ativo</button></td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="editProduct(this)">Editar</button>
+                        <button class="btn btn-sm btn-success" onclick="includeProduct()">Incluir</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteProduct(this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>Alface</td>
+                    <td>R$ 3,00</td>
+                    <td><button class="btn btn-sm btn-danger" onclick="toggleStatus(this)">Inativo</button></td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="editProduct(this)">Editar</button>
+                        <button class="btn btn-sm btn-success" onclick="includeProduct()">Incluir</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteProduct(this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>Sopa de Cebola</td>
+                    <td>R$ 12,00</td>
+                    <td><button class="btn btn-sm btn-success" onclick="toggleStatus(this)">Ativo</button></td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="editProduct(this)">Editar</button>
+                        <button class="btn btn-sm btn-success" onclick="includeProduct()">Incluir</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteProduct(this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>Quiche de Queijo</td>
+                    <td>R$ 15,00</td>
+                    <td><button class="btn btn-sm btn-success" onclick="toggleStatus(this)">Ativo</button></td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="editProduct(this)">Editar</button>
+                        <button class="btn btn-sm btn-success" onclick="includeProduct()">Incluir</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteProduct(this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>Macarrão à Bolonhesa</td>
+                    <td>R$ 25,00</td>
+                    <td><button class="btn btn-sm btn-danger" onclick="toggleStatus(this)">Inativo</button></td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="editProduct(this)">Editar</button>
+                        <button class="btn btn-sm btn-success" onclick="includeProduct()">Incluir</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteProduct(this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>Panqueca</td>
+                    <td>R$ 8,00</td>
+                    <td><button class="btn btn-sm btn-success" onclick="toggleStatus(this)">Ativo</button></td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="editProduct(this)">Editar</button>
+                        <button class="btn btn-sm btn-success" onclick="includeProduct()">Incluir</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteProduct(this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>Frutas</td>
+                    <td>R$ 10,00</td>
+                    <td><button class="btn btn-sm btn-danger" onclick="toggleStatus(this)">Inativo</button></td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="editProduct(this)">Editar</button>
+                        <button class="btn btn-sm btn-success" onclick="includeProduct()">Incluir</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteProduct(this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>Chocolate Quente</td>
+                    <td>R$ 9,00</td>
+                    <td><button class="btn btn-sm btn-success" onclick="toggleStatus(this)">Ativo</button></td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="editProduct(this)">Editar</button>
+                        <button class="btn btn-sm btn-success" onclick="includeProduct()">Incluir</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteProduct(this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>23</td>
+                    <td>Salada Caesar</td>
+                    <td>R$ 14,00</td>
+                    <td><button class="btn btn-sm btn-success" onclick="toggleStatus(this)">Ativo</button></td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="editProduct(this)">Editar</button>
+                        <button class="btn btn-sm btn-success" onclick="includeProduct()">Incluir</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteProduct(this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>24</td>
+                    <td>Feijão Tropeiro</td>
+                    <td>R$ 13,00</td>
+                    <td><button class="btn btn-sm btn-success" onclick="toggleStatus(this)">Ativo</button></td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="editProduct(this)">Editar</button>
+                        <button class="btn btn-sm btn-success" onclick="includeProduct()">Incluir</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteProduct(this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>25</td>
+                    <td>Frango à Parmegiana</td>
+                    <td>R$ 30,00</td>
+                    <td><button class="btn btn-sm btn-success" onclick="toggleStatus(this)">Ativo</button></td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" onclick="editProduct(this)">Editar</button>
+                        <button class="btn btn-sm btn-success" onclick="includeProduct()">Incluir</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteProduct(this)">Excluir</button>
+                    </td>
+                </tr>
+                <!-- Mais produtos podem ser adicionados aqui -->
+            </tbody>
+        </table>
+        <div id="message" class="alert alert-info hidden" role="alert">
+            Atualizando a página, por favor aguarde.
+        </div>
+    </div>
+    <script>
+        const products = [
+            { id: 1, description: 'Pizza', price: 'R$ 30,00', status: 'Ativo' },
+            { id: 2, description: 'Refrigerante', price: 'R$ 5,00', status: 'Ativo' },
+            { id: 3, description: 'Cajuina', price: 'R$ 7,00', status: 'Ativo' },
+            { id: 4, description: 'Torta', price: 'R$ 10,00', status: 'Ativo' },
+            { id: 5, description: 'Hambúrguer', price: 'R$ 15,00', status: 'Ativo' },
+            { id: 6, description: 'Batata Frita', price: 'R$ 8,00', status: 'Ativo' },
+            { id: 7, description: 'Salada', price: 'R$ 12,00', status: 'Inativo' },
+            { id: 8, description: 'Suco Natural', price: 'R$ 6,00', status: 'Ativo' },
+            { id: 9, description: 'Macarrão', price: 'R$ 20,00', status: 'Ativo' },
+            { id: 10, description: 'Frango Assado', price: 'R$ 25,00', status: 'Inativo' },
+            { id: 11, description: 'Cheesecake', price: 'R$ 18,00', status: 'Ativo' },
+            { id: 12, description: 'Brigadeiro', price: 'R$ 4,00', status: 'Ativo' },
+            { id: 13, description: 'Brownie', price: 'R$ 7,00', status: 'Inativo' },
+            { id: 14, description: 'Salmon', price: 'R$ 50,00', status: 'Ativo' },
+            { id: 15, description: 'Espaguete à Carbonara', price: 'R$ 22,00', status: 'Ativo' },
+            { id: 16, description: 'Alface', price: 'R$ 3,00', status: 'Inativo' },
+            { id: 17, description: 'Sopa de Cebola', price: 'R$ 12,00', status: 'Ativo' },
+            { id: 18, description: 'Quiche de Queijo', price: 'R$ 15,00', status: 'Ativo' },
+            { id: 19, description: 'Macarrão à Bolonhesa', price: 'R$ 25,00', status: 'Inativo' },
+            { id: 20, description: 'Panqueca', price: 'R$ 8,00', status: 'Ativo' },
+            { id: 21, description: 'Frutas', price: 'R$ 10,00', status: 'Inativo' },
+            { id: 22, description: 'Chocolate Quente', price: 'R$ 9,00', status: 'Ativo' },
+            { id: 23, description: 'Salada Caesar', price: 'R$ 14,00', status: 'Ativo' },
+            { id: 24, description: 'Feijão Tropeiro', price: 'R$ 13,00', status: 'Ativo' },
+            { id: 25, description: 'Frango à Parmegiana', price: 'R$ 30,00', status: 'Ativo' },
+        ];
+
+        function toggleStatus(button) {
+            const status = button.innerText === 'Ativo' ? 'Inativo' : 'Ativo';
+            button.innerText = status;
+            button.classList.toggle('btn-success');
+            button.classList.toggle('btn-danger');
+        }
+
+        function editProduct(button) {
+            const row = button.closest('tr');
+            const description = row.cells[1].innerText;
+            const price = row.cells[2].innerText;
+            alert(`Editar produto:\nDescrição: ${description}\nPreço: ${price}`);
+        }
+
+        function includeProduct() {
+            alert('Incluir novo produto.');
+        }
+
+        function deleteProduct(button) {
+            if (confirm('Tem certeza que deseja excluir este produto?')) {
+                const row = button.closest('tr');
+                row.remove();
+            }
+        }
+
+        function searchProduct() {
+            const searchTerm = document.getElementById('product-description').value.toLowerCase();
+            const rows = document.querySelectorAll('#product-table tr');
+            let found = false;
+
+            rows.forEach(row => {
+                const description = row.cells[1].innerText.toLowerCase();
+                if (description.includes(searchTerm) || searchTerm === '') {
+                    row.style.display = '';
+                    found = true;
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+
+            if (!found) {
+                alert('Este produto não foi cadastrado!');
+            }
+        }
+
+        function reloadPage() {
+            document.getElementById('message').classList.remove('hidden');
+            setTimeout(() => {
+                location.reload();
+            }, 2000);
+        }
+
+        function showUpdatingMessage() {
+            document.getElementById('message').classList.remove('hidden');
+        }
+
+        function updateTable() {
+            const recordsPerPage = parseInt(document.getElementById('recordsPerPage').value);
+            const rows = document.querySelectorAll('#product-table tr');
+            rows.forEach((row, index) => {
+                if (index < recordsPerPage) {
+                    row.classList.remove('hidden');
+                } else {
+                    row.classList.add('hidden');
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateTable();
+        });
+    </script>
+</body>
+</html>
 
