@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Dados Pessoais</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        fieldset {
+            border: 2px solid #4CAF50; /* Cor da borda personalizável */
+            border-radius: 10px; /* Border radius */
+            padding: 20px; /* Reduzido o padding */
+            background-color: #66f1fb; /* Cor azul claro */
+            box-shadow: 0 4px 6px rgba(152, 151, 151, 0.99), 0 1px 3px rgb(126, 125, 125); 
+            transform: translateY(-2px); 
+            width: 700px; 
+        }
+        legend {
+            font-weight: bold;
+        }
+        label {
+            display: inline-block;
+            width: 100px; /* Ajuste a largura conforme necessário */
+            margin-top: 10px;
+        }
+        input[type="text"], input[type="email"] {
+            width: calc(100% - 110px); /* Ajuste a largura conforme necessário */
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome">
+            
+            <label for="email">E-Mail:</label>
+            <input type="email" id="email" name="email">
+        </fieldset>
+    </form>
+</body>
+</html>
 
