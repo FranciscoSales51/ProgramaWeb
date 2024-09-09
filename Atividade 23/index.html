@@ -1,1 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Dinâmicas</title>
+    <style>
+        .box {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            color: rgb(9, 0, 0);
+            font-weight: bold;
+            line-height: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Box Dinâmicas</h2>
+        <button onclick="listarBoxes()">Listar Boxes</button>
+        <button onclick="verificarCor()">Verificar Cor da Box</button>
+        <div id="boxContainer"></div>
+    </div>
+
+    <script>
+        let boxes = [
+            { id: 1, color: 'green', borderRadius: '10px', tamanho: '100px' },
+            { id: 2, color: 'blue', borderRadius: '20px', tamanho: '120px' },
+            { id: 3, color: 'purple', borderRadius: '30px', tamanho: '140px' },
+            { id: 4, color: 'red', borderRadius: '40px', tamanho: '160px' },
+            { id: 5, color: 'orange', borderRadius: '15px', tamanho: '110px' },
+            { id: 6, color: 'pink', borderRadius: '25px', tamanho: '130px' },
+            { id: 7, color: 'cyan', borderRadius: '35px', tamanho: '150px' },
+            { id: 8, color: 'yellow', borderRadius: '45px', tamanho: '170px' }
+        ];
+
+        function criaBox(box) {
+            let newBox = document.createElement('div');
+            newBox.className = 'box';
+            newBox.style.width = box.tamanho;
+            newBox.style.height = box.tamanho;
+            newBox.style.backgroundColor = box.color;
+            newBox.style.borderRadius = box.borderRadius;
+            newBox.innerText = `Box ${box.id}`;
+            document.getElementById('boxContainer').appendChild(newBox);
+        }
+
+        function listarBoxes() {
+            document.getElementById('boxContainer').innerHTML = '';
+            boxes.forEach(box => criaBox(box));
+        }
+
+        function verificarCor() {
+            let position = prompt("Digite o número da caixa para verificar a cor (1, 2, 3, etc.):");
+            position = parseInt(position, 10);
+            
+            if (isNaN(position) || position < 1 || position > boxes.length) {
+                alert("Número de caixa inválido. Por favor, insira um número válido.");
+                return;
+            }
+
+            let box = boxes.find(b => b.id === position);
+            if (box) {
+                alert(`A cor da caixa ${box.id} é ${box.color}.`);
+            } else {
+                alert("Caixa não encontrada.");
+            }
+        }
+    </script>
+</body>
+</html>
 
