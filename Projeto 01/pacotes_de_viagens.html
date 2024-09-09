@@ -3,131 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #fcfcfc;
-            color: #08746d;
-            text-align: center;
-            padding: 20px;
-        }
-        nav {
-            float: right;
-            margin-right: 20px;
-        }
-        nav a {
-            color: #1805ea;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        .quemsomos {
-            text-align: justify;
-            margin-top: 50px;
-        }
-        .imagem-container {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .imagem-container img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-        .formulario {
-            margin-top: 50px;
-            text-align: center;
-        }
-        .formulario input[type="text"],
-        .formulario input[type="email"],
-        .formulario input[type="date"],
-        .formulario input[type="number"],
-        .formulario input[type="tel"],
-        .formulario select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-        }
-        .formulario input[type="submit"] {
-            background-color: #1805ea;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .reserva-sucesso {
-            color: green;
-            font-weight: bold;
-            display: none;
-            animation: blink-animation 1s infinite;
-        }
-        @keyframes blink-animation {
-            0% { opacity: 1; }
-            50% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-    </style>
+    <title>Comprar Pacotes - JM Viagens</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-    <h1>JM Viagens</h1>
     <img src="imagens/logo.png" alt="Logo JM Viagens">
+    <img src="imagens/imagem_principal.png" alt="Imagem Principal">
     <nav>
         <a href="index.html">Home</a>
         <a href="quem_somos.html">Quem Somos</a>
         <a href="contato.html">Contato</a>
-        <a href="pacotes_de_viagens.html">Comprar Pacotes de Viagens</a>
+        <a href="comprar_pacotes.html">Comprar Pacotes</a>
     </nav>
 </header>
 
-<div class="formulario">
-    <h2>Reserve seu Pacote de Viagem</h2>
-    <form id="formReserva" action="submit_form.php" method="post" onsubmit="return reservarPacote()">
-        <input type="text" id="nome" name="nome" placeholder="Nome Completo" required><br>
-        <input type="email" name="email" placeholder="E-mail" required><br>
-        <input type="tel" name="telefone" placeholder="Telefone de Contato (DDD)" required><br>
-        <input type="date" name="data_partida" placeholder="Data de Partida" required><br>
-        <input type="date" name="data_retorno" placeholder="Data de Retorno" required><br>
-        <input type="number" name="quantidade_adultos" placeholder="Quantidade de Adultos" required><br>
-        <select name="destino" required>
-            <option value="">Selecione o destino</option>
-            <option value="Aracajú-SE">Aracajú-SE</option>
-            <option value="Brasília-DF">Brasília-DF</option>
-            <option value="Chapada dos Veadeiros-GO">Chapada dos Veadeiros-GO</option>
-            <option value="Curitiba-PR">Curitiba-PR</option>
-            <option value="Fortaleza-CE">Fortaleza-CE</option>
-            <option value="Foz do Iguaçu-PR">Foz do Iguaçu-PR</option>
-            <option value="Jalapão-TO">Jalapão-TO</option>
-            <option value="Parnaíba-PI">Parnaíba-PI</option>
-        </select><br>
-        <label for="idade_crianca">Idade da Criança:</label>
-        <select name="idade_crianca" id="idade_crianca">
-            <option value="menor10">Menor que 10 anos</option>
-            <option value="maior10">Maior ou igual a 10 anos</option>
-        </select><br>
-        <label for="quantidade_criancas">Quantidade de Crianças:</label>
-        <input type="number" name="quantidade_criancas" id="quantidade_criancas" placeholder="Quantidade de crianças (se aplicável)"><br>
-        <input type="text" name="forma_pagamento" placeholder="Forma de Pagamento"><br>
-        <input type="submit" value="Reservar Pacote">
-    </form>
-    <div id="reservaSucesso" class="reserva-sucesso"></div>
-</div>
+<main>
+    <h1>Comprar Pacotes</h1>
+    <p>Descubra e compre nossos pacotes de viagem para destinos incríveis.</p>
+</main>
 
-<script>
-    function reservarPacote() {
-        var nome = document.getElementById('nome').value;
-        document.getElementById('reservaSucesso').innerText = "Realizado com sucesso: " + nome;
-        document.getElementById('reservaSucesso').style.display = 'block';
-        return false; // Para evitar o envio do formulário
-    }
-</script>
+<footer>
+    <p>&copy; 2024 JM Viagens. Todos os direitos reservados.</p>
+</footer>
 
 </body>
 </html>
