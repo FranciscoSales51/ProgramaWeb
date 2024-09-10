@@ -4,13 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comprar Pacotes - JM Viagens</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS incorporado */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #fcfcfc;
+            color: #08746d;
+            text-align: center;
+            padding: 10px 20px;
+            position: relative;
+        }
+
+        header img.logo {
+            max-width: 150px; /* Ajuste conforme necessário */
+            height: auto;
+        }
+
+        header img.imagem-principal {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #1805ea;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .texto-ficticio {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .texto-ficticio h2 {
+            color: #08746d;
+        }
+
+        .texto-ficticio p {
+            margin-bottom: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f1f1f1;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
 
 <header>
-    <img src="imagens/logo.png" alt="Logo JM Viagens">
-    <img src="imagens/imagem_principal.png" alt="Imagem Principal">
+    <img src="imagens/logo.png" alt="Logo JM Viagens" class="logo">
+    <img src="imagens/principal.png" alt="Imagem Principal" class="imagem-principal">
     <nav>
         <a href="index.html">Home</a>
         <a href="quem_somos.html">Quem Somos</a>
@@ -21,7 +91,18 @@
 
 <main>
     <h1>Comprar Pacotes</h1>
-    <p>Descubra e compre nossos pacotes de viagem para destinos incríveis.</p>
+    <section class="texto-ficticio">
+        <h2>Encontre o Pacote Perfeito</h2>
+        <p>Na JM Viagens, oferecemos uma ampla gama de pacotes turísticos para atender a todos os gostos e orçamentos. Se você está procurando uma escapada relaxante, uma aventura emocionante, ou uma experiência cultural, temos o pacote certo para você.</p>
+        <p>Confira alguns dos nossos pacotes mais populares:</p>
+        <ul>
+            <li>Pacote para Praias Tropicais - Relaxamento e Sol</li>
+            <li>Pacote de Aventura na Montanha - Trilhas e Esportes Radicais</li>
+            <li>Pacote Cultural em Cidades Históricas - História e Arte</li>
+            <li>Pacote Familiar - Diversão e Conforto para Todos</li>
+        </ul>
+        <p>Entre em contato conosco para mais informações sobre nossos pacotes e para personalizar a sua viagem dos sonhos!</p>
+    </section>
 </main>
 
 <footer>
