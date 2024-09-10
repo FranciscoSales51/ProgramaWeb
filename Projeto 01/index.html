@@ -4,13 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - JM Viagens</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS incorporado */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #fcfcfc;
+            color: #08746d;
+            text-align: center;
+            padding: 10px 20px;
+            position: relative;
+        }
+
+        header img.logo {
+            max-width: 150px; /* Ajuste conforme necessário */
+            height: auto;
+        }
+
+        header img.imagem-principal {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #1805ea;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .texto-ficticio {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .texto-ficticio h2 {
+            color: #08746d;
+        }
+
+        .texto-ficticio p {
+            margin-bottom: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f1f1f1;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
 
 <header>
-    <img src="imagens/logo.png" alt="Logo JM Viagens">
-    <img src="imagens/principal.png" alt="Imagem Principal">
+    <img src="imagens/logo.png" alt="Logo JM Viagens" class="logo">
+    <img src="imagens/principal.png" alt="Imagem Principal" class="imagem-principal">
     <nav>
         <a href="index.html">Home</a>
         <a href="quem_somos.html">Quem Somos</a>
@@ -22,6 +92,14 @@
 <main>
     <h1>Bem-vindo à JM Viagens!</h1>
     <p>Explore nossos pacotes e descubra o mundo com conforto e estilo.</p>
+    
+    <!-- Texto fictício da empresa -->
+    <section class="texto-ficticio">
+        <h2>Sobre a JM Viagens</h2>
+        <p>A JM Viagens é especializada em proporcionar experiências de viagem inesquecíveis. Com mais de 10 anos de experiência no mercado, nossa equipe é composta por especialistas apaixonados por turismo que estão comprometidos em oferecer o melhor atendimento e suporte para suas viagens.</p>
+        <p>Seja você um viajante em busca de aventuras emocionantes ou alguém que deseja relaxar em destinos paradisíacos, temos o pacote perfeito para você. Nossa missão é garantir que cada viagem seja planejada com detalhes impecáveis e que cada cliente viva momentos únicos e memoráveis.</p>
+        <p>Confie na JM Viagens para transformar suas férias em experiências verdadeiramente inesquecíveis!</p>
+    </section>
 </main>
 
 <footer>
@@ -30,3 +108,4 @@
 
 </body>
 </html>
+
