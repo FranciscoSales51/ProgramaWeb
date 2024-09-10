@@ -72,18 +72,26 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
-        }
-
-        .pontos-turisticos img {
-            max-width: 50%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 10px;
+            gap: 20px; /* Espaçamento entre os itens */
         }
 
         .pontos-turisticos .item {
             text-align: center;
+            flex: 1 1 calc(50% - 20px); /* Flexível com espaço para margem */
+            max-width: 45%; /* Garante que as imagens não se estiquem */
             margin: 10px;
+        }
+
+        .pontos-turisticos img {
+            width: 100%; /* Ajusta a imagem para preencher o contêiner */
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .pontos-turisticos p {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
         }
 
         footer {
@@ -103,9 +111,7 @@
         <a href="index.html">Home</a>
         <a href="quem_somos.html">Quem Somos</a>
         <a href="contato.html">Contato</a>
-        <a href="pacotes_de_viagens.html">Comprar Pacotes</a>
-        <a href="pacote.html">Pontos Turísticos</a>
-        
+        <a href="pacote.html">Comprar Pacotes</a>
     </nav>
 </header>
 
@@ -142,3 +148,4 @@
 
 </body>
 </html>
+
