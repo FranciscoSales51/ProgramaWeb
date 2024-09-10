@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprar Pacotes - JM Viagens</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #fcfcfc;
+            color: #08746d;
+            text-align: center;
+            padding: 10px 20px;
+            position: relative;
+        }
+
+        header img.logo {
+            max-width: 150px; /* Ajuste conforme necessário */
+            height: auto;
+        }
+
+        header img.imagem-principal {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #1805ea;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f1f1f1;
+            margin-top: 20px;
+        }
+
+        .form-section {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .form-section h2 {
+            color: #08746d;
+        }
+
+        .form-section p {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="imagens/logo.png" alt="Logo JM Viagens" class="logo">
+    <img src="imagens/principal.png" alt="Imagem Principal" class="imagem-principal">
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="quem_somos.html">Quem Somos</a>
+        <a href="contato.html">Contato</a>
+        <a href="pacotes_de_viagens.html">Comprar Pacotes</a>
+        <a href="pacote.html">Pontos Turísticos</a>
+    </nav>
+</header>
+
+<main>
+    <h1>Comprar Pacotes</h1>
+
+    <!-- Formulário de Compra -->
+    <section class="form-section">
+        <h2>Preencha os Dados para Compra</h2>
+        <form id="purchaseForm">
+            <div class="form-group">
+                <label for="destination">Destino</label>
+                <input type="text" class="form-control" id="destination" placeholder="Digite o destino" required>
+            </div>
+            <div class="form-group">
+                <label for="departureDate">Data de Partida</label>
+                <input type="date" class="form-control" id="departureDate" required>
+            </div>
+            <div class="form-group">
+                <label for="returnDate">Data de Retorno</label>
+                <input type="date" class="form-control" id="returnDate" required>
+            </div>
+            <div class="form-group">
+                <label for="children">Quantidade de Crianças (menores de 10 anos)</label>
+                <input type="number" class="form-control" id="children" placeholder="Quantidade de crianças" required>
+            </div>
+            <div class="form-group">
+                <label>Forma de Pagamento</label>
+                <select class="form-control" id="paymentMethod" required>
+                    <option value="" disabled selected>Selecione uma opção</option>
+                    <option value="avista">À Vista</option>
+                    <option value="pix">Pix</option>
+                    <option value="parcelado">Parcelado</option>
+                </select>
+            </div>
+            <div class="form-group" id="installmentsGroup" style="display: none;">
+                <label for="installments">Número de Parcelas</label>
+                <select class="form-control" id="installments">
+                    <option value="" disabled selected>Selecione o número de parcelas</option>
+                    <option value="2">2 parcelas</option>
+                    <option value="4">4 parcelas</option>
+                    <option value="6">6 parcelas</option>
+                    <option value="8">8 parcelas</option>
+                    <option value="10">10 parcelas</option>
+                    <option value="12">12 parcelas</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Confirmar Compra</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 JM Viagens. Todos os direitos reservados.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    document.getElementById('paymentMethod').addEventListener('change', function () {
+        const installmentsGroup = document.getElementById('installmentsGroup');
+        if (this.value === 'parcelado') {
+            installmentsGroup.style.display = 'block';
+        } else {
+            installmentsGroup.style.display = 'none';
+        }
+    });
+
+    document.getElementById('purchaseForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Previne o envio padrão do formulário
+
+        // Mostra um alerta de confirmação
+        if (confirm('Deseja confirmar a compra?')) {
+            alert('Compra realizada com sucesso!');
+            // Aqui você pode adicionar código para processar o formulário
+            // e enviar os dados para o servidor, se necessário.
+        }
+    });
+</script>
+
+</body>
+</html>
