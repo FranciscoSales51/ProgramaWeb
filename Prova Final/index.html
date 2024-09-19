@@ -3,262 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Licenciatura em Computação</title>
+    <title>Home - Curso de Licenciatura em Computação</title>
     <style>
-        /* Reset básico */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
-        }
-
-        header {
-            background: #0056a0;
-            color: #fff;
-            padding: 1rem 0;
-        }
-
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h1 {
-            font-size: 1.8rem;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-        }
-
-        nav ul li {
-            margin: 0 1rem;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #ddd;
-        }
-
-        main {
-            padding: 2rem 0;
-            background: #fff;
-        }
-
-        section {
-            margin-bottom: 2rem;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            color: #0056a0;
-            margin-bottom: 1rem;
-        }
-
-        ul {
-            list-style: disc;
-            margin-left: 2rem;
-        }
-
-        address {
-            font-style: normal;
-        }
-
-        footer {
-            background: #0056a0;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-        }
-
-        footer p {
             margin: 0;
-        }
-
-        /* Layout responsivo */
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            nav ul {
-                flex-direction: column;
-                margin-top: 1rem;
-            }
-
-            nav ul li {
-                margin: 0.5rem 0;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.5rem;
-            }
-
-            nav ul li {
-                margin: 0.5rem 0;
-            }
-
-            main {
-                padding: 1rem 0;
-            }
-        }
-
-        .home-intro {
-            text-align: center;
-            padding: 2rem;
-            background: #e9ecef;
-            border-radius: 8px;
-        }
-
-        .home-intro h2 {
-            margin-bottom: 1rem;
+            padding: 0;
             color: #333;
         }
-
-        .profile-link {
-            color: #0056a0;
+        header {
+            background: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            margin: 10px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            color: white;
             text-decoration: none;
         }
-
-        .profile-link:hover {
-            text-decoration: underline;
+        main {
+            padding: 20px;
         }
-
-        .contact-form {
-            max-width: 600px;
-            margin: auto;
-        }
-
-        .contact-form label {
-            display: block;
-            margin: 0.5rem 0 0.2rem;
-        }
-
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 0.8rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .contact-form button {
-            background: #0056a0;
-            color: #fff;
-            border: none;
-            padding: 0.8rem 1.2rem;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .contact-form button:hover {
-            background: #003d70;
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #f1f1f1;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Licenciatura em Computação</h1>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#sobre">Sobre o Curso</a></li>
-                    <li><a href="#corpo-docente">Corpo Docente</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>Curso de Licenciatura em Computação</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="sobre.html">Sobre o Curso</a>
+            <a href="corpo-docente.html">Corpo Docente</a>
+            <a href="contato.html">Contato</a>
+        </nav>
     </header>
-    
     <main>
-        <section id="home" class="home-intro">
-            <h2>Bem-vindo ao Curso de Licenciatura em Computação</h2>
-            <p>Descubra uma formação sólida em ciência da computação com um enfoque nas práticas pedagógicas inovadoras e nas mais recentes tendências tecnológicas. Acompanhe nossos destaques e novidades!</p>
-        </section>
-
-        <section id="sobre">
-            <article>
-                <h2>Sobre o Curso</h2>
-                <p>O curso de Licenciatura em Computação oferece uma formação sólida em ciência da computaão, preparando os alunos para atuar como professores e profissionais na área da tecnologia. O programa é focado em práticas pedagógicas inovadoras e nas mais recentes tendências tecnológicas.</p>
-                <h3>Objetivos e Metas</h3>
-                <p>Nosso objetivo é formar profissionais capacitados para enfrentar os desafios da área de computação e contribuir significativamente para a educação em tecnologia.</p>
-                <h3>Currículo e Disciplinas Oferecidas</h3>
-                <ul>
-                    <li>Fundamentos da Programação</li>
-                    <li>Algoritmos e Estruturas de Dados</li>
-                    <li>Sistemas Operacionais</li>
-                    <li>Inteligência Artificial</li>
-                    <li>Ensino de Computação</li>
-                    <li>Desenvolvimento Web</li>
-                </ul>
-            </article>
-        </section>
-
-        <section id="corpo-docente">
-            <article>
-                <h2>Corpo Docente</h2>
-                <p>Nossos professores são especialistas reconhecidos na área da computação e educação, trazendo uma combinação de experiência prática e académica para o curso.</p>
-                <ul>
-                    <li><a href="https://exemplo.com/publicacao-ana-silva" class="profile-link">Prof. Dr. Ana Silva</a> - Especialista em Inteligência Artificial</li>
-                    <li><a href="https://exemplo.com/publicacao-joao-oliveira" class="profile-link">Prof. Dr. João Oliveira</a> - Especialista em Algoritmos e Estruturas de Dados</li>
-                    <li><a href="https://exemplo.com/publicacao-maria-santos" class="profile-link">Prof. Mr. Maria Santos</a> - Especialista em Ensino de Computação</li>
-                </ul>
-            </article>
-        </section>
-
-        <section id="contato">
-            <article>
-                <h2>Contato</h2>
-                <p>Se você tiver dúvidas ou precisar de mais informações, entre em contato conosco:</p>
-                <address>
-                    <p>Email: <a href="mailto:contato@computacao.edu.br">contato@computacao.edu.br</a></p>
-                    <p>Telefone: (11) 1234-5678</p>
-                </address>
-                <div class="contact-form">
-                    <h3>Formulário de Contato</h3>
-                    <form action="https://exemplo.com/enviar-mensagem" method="post">
-                        <label for="nome">Nome:</label>
-                        <input type="text" id="nome" name="nome" required>
-                        
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                        
-                        <label for="mensagem">Mensagem:</label>
-                        <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-                        
-                        <button type="submit">Enviar</button>
-                    </form>
-                </div>
-            </article>
+        <section>
+            <h2>Bem-vindo ao nosso curso!</h2>
+            <p>Descubra as oportunidades e os desafios que a computação pode oferecer.</p>
         </section>
     </main>
-
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Licenciatura em Computaçãoo - Todos os direitos reservados</p>
-        </div>
+        <p>&copy; 2024 Curso de Licenciatura em Computação</p>
     </footer>
 </body>
 </html>
