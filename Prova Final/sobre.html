@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre o Curso - Licenciatura em Computação</title>
+    <title>Sobre o Curso - Curso de Licenciatura em Computação</title>
     <style>
-        /* Estilos iguais aos da página Home */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -15,8 +14,12 @@
         header {
             background: #007BFF;
             color: white;
-            padding: 10px 20px;
+            padding: 15px 20px;
             text-align: center;
+        }
+        header img {
+            max-width: 150px;
+            height: auto;
         }
         nav {
             margin: 10px 0;
@@ -28,16 +31,35 @@
         }
         main {
             padding: 20px;
+            text-align: center;
         }
         footer {
             text-align: center;
             padding: 20px;
             background: #f1f1f1;
         }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .image-container img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            margin: 0 10px;
+        }
+        @media (max-width: 600px) {
+            .image-container img {
+                width: 100px;
+                height: 100px;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
+        <img src="https://www.infoescola.com/wp-content/uploads/2017/08/Leiden_University_seal.svg_-518x600.png" alt="Logo da Faculdade">
         <h1>Sobre o Curso</h1>
         <nav>
             <a href="index.html">Home</a>
@@ -47,18 +69,21 @@
         </nav>
     </header>
     <main>
-        <section>
-            <h2>Descrição do Curso</h2>
-            <p>O curso de Licenciatura em Computação forma profissionais capacitados para atuar na educação em computação.</p>
-            <h3>Objetivos</h3>
-            <p>Formar professores competentes e críticos na área de computação.</p>
-            <h3>Currículo</h3>
-            <p>Disciplina 1, Disciplina 2, Disciplina 3...</p>
-        </section>
+        <h2>Descrição do Curso</h2>
+        <p>O curso de Licenciatura em Computação visa formar profissionais com uma sólida formação teórica e prática.</p>
+        <p>Disponibilizamos laboratórios de informática com os melhores equipamentos.</p>    
+        <p>Cursos como:</p>
+        <p>Robótica, Engenharia da Computação, Sistemas de Informação e Engenharia de Controle e Automação</p>
+        <div class="image-container">
+            <img src="https://www.clickideia.com.br/blog/wp-content/uploads/2017/10/Fiap-aclimacao-lab-1-e1508848494124.jpg" alt="Imagem 1">
+            <img src="https://portal.ifrn.edu.br/media/images/12770_Alunos_do_Natal-Central_visitam_Laborato.width-500.jpg" alt="Imagem 2">
+            <img src="https://j.pucsp.br/sites/default/files/21a9d975-98cc-40a3-a033-2ba72e30ebdc_1.jpg" alt="Imagem 3">
+        </div>
     </main>
     <footer>
         <p>&copy; 2024 Curso de Licenciatura em Computação</p>
     </footer>
 </body>
 </html>
+
 
