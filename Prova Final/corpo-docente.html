@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corpo Docente - Licenciatura em Computação</title>
+    <title>Corpo Docente - Curso de Licenciatura em Computação</title>
     <style>
-        /* Estilos iguais aos da página Home */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -15,8 +14,12 @@
         header {
             background: #007BFF;
             color: white;
-            padding: 10px 20px;
+            padding: 15px 20px;
             text-align: center;
+        }
+        header img {
+            max-width: 150px;
+            height: auto;
         }
         nav {
             margin: 10px 0;
@@ -28,16 +31,34 @@
         }
         main {
             padding: 20px;
+            text-align: center;
         }
         footer {
             text-align: center;
             padding: 20px;
             background: #f1f1f1;
         }
+        .professor {
+            margin: 20px;
+            display: inline-block;
+            text-align: center;
+        }
+        .professor img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+        }
+        @media (max-width: 600px) {
+            .professor img {
+                width: 100px;
+                height: 100px;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
+        <img src="https://www.infoescola.com/wp-content/uploads/2017/08/Leiden_University_seal.svg_-518x600.png" alt="Logo da Faculdade">
         <h1>Corpo Docente</h1>
         <nav>
             <a href="index.html">Home</a>
@@ -47,17 +68,37 @@
         </nav>
     </header>
     <main>
-        <section>
-            <h2>Professores</h2>
-            <article>
-                <h3>Prof. Dr. João Silva</h3>
-                <p>Área de pesquisa: Inteligência Artificial.</p>
-            </article>
-            <article>
-                <h3>Prof.ª Maria Oliveira</h3>
-                <p>Área de pesquisa: Educação e Tecnologia.</p>
-            </article>
-        </section>
+        <h2>Nossos Professores</h2>
+        <div class="professor">
+            <img src="https://img.freepik.com/fotos-premium/professor-negro-sorridente-na-sala-de-aula-da-escola_236854-36193.jpg" alt="Professor 1">
+            <p><strong>Rodrigo Alves</strong></p>
+            <p>Robótica</p>
+        </div>
+        <div class="professor">
+            <img src="https://s2-oglobo.glbimg.com/GykpVPYnUOMwMPSS_BJenkb7ofs=/0x0:1024x683/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2022/3/O/9GjkU9SMiYuo2KKaWMhQ/101525178-in-this-december-14-2022-image-released-by-harvard-university-claudine-gay-poses-for-a-pho.jpg" alt="Professor 2">
+            <p><strong>Ana Paula</strong></p>
+            <p>Engenharia da Computação</p>
+        </div>
+        <div class="professor">
+            <img src="https://humboldt.com.br/wp-content/uploads/2023/02/newsletter-janeiro-fevereiro-2023-temos-uma-nova-vice-diretora-alema-683x1024.jpg" alt="Professor 3">
+            <p><strong>Bárbara Silveira</strong></p>
+            <p>Sistemas de Informação</p>
+        </div>
+        <div class="professor">
+            <img src="https://c.superprof.com/i/a/28236865/12564818/600/20231004110328/meu-nome-stefan-kaps-sou-nativo-alemao-trabalho-area-comercial-com-paises-lingua-alema-dou-explicacoes.jpg" alt="Professor 4">
+            <p><strong>Arthur Gaspar</strong></p>
+            <p>Engenharia de Controle e Automação</p>
+        </div>
+        <div class="professor">
+            <img src="https://static.wixstatic.com/media/9562a5_4e55e8a64e394fb8bd8a0995c2af5793~mv2.jpg/v1/fill/w_300,h_300,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/WhatsApp%2520Image%25202021-02-15%2520at%252021_.jpg" alt="Professor 5">
+            <p><strong>Wanda Queiroz</strong></p>
+            <p>Robótica</p>
+        </div>
+        <div class="professor">
+            <img src="https://mundonegro.inf.br/wp-content/uploads/2020/09/images-22.jpeg" alt="Professor 6">
+            <p><strong>Kátia Cilene</strong></p>
+            <p>Sistemas de Informação </p>
+        </div>
     </main>
     <footer>
         <p>&copy; 2024 Curso de Licenciatura em Computação</p>
