@@ -14,8 +14,12 @@
         header {
             background: #007BFF;
             color: white;
-            padding: 10px 20px;
+            padding: 15px 20px;
             text-align: center;
+        }
+        header img {
+            max-width: 150px;
+            height: auto;
         }
         nav {
             margin: 10px 0;
@@ -27,16 +31,33 @@
         }
         main {
             padding: 20px;
+            text-align: center;
         }
         footer {
             text-align: center;
             padding: 20px;
             background: #f1f1f1;
         }
+        .globe-animation {
+            width: 300px;
+            height: 300px;
+            margin: 20px auto;
+            background-image: url('https://i.makeagif.com/media/5-16-2018/WIKVPz.gif');
+            background-size: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        @media (max-width: 600px) {
+            .globe-animation {
+                width: 200px;
+                height: 200px;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
+        <img src="https://www.infoescola.com/wp-content/uploads/2017/08/Leiden_University_seal.svg_-518x600.png" alt="Logo da Faculdade">
         <h1>Curso de Licenciatura em Computação</h1>
         <nav>
             <a href="index.html">Home</a>
@@ -46,8 +67,10 @@
         </nav>
     </header>
     <main>
+        <section class="globe-animation"></section>
         <section>
             <h2>Bem-vindo ao nosso curso!</h2>
+            <p>Há mais de 80 anos construindo sucessos.</p>
             <p>Descubra as oportunidades e os desafios que a computação pode oferecer.</p>
         </section>
     </main>
